@@ -146,15 +146,15 @@ pagination:
 <div class="dofusCalc__twoCols">
     <div class="dofusCalc__col">
         <p><strong>Caractéristiques</strong></p>
-        <div class="dofusCalc__row">⚡ <input id="dofusCalc__puissance" type="number" value="509"></div>
-        <div class="dofusCalc__row">🌳 <input id="dofusCalc__force" type="number" value="439"></div>
+        <div class="dofusCalc__row">⚡ <input id="dofusCalc__puissance" type="number" value="0"></div>
+        <div class="dofusCalc__row">🌳 <input id="dofusCalc__force" type="number" value="0"></div>
         <div class="dofusCalc__row">🔥 <input id="dofusCalc__intel" type="number" value="0"></div>
         <div class="dofusCalc__row">💧 <input id="dofusCalc__chance" type="number" value="0"></div>
         <div class="dofusCalc__row">🌪️ <input id="dofusCalc__agi" type="number" value="0"></div>
     </div>
     <div class="dofusCalc__col">
         <p><strong>DMG Bonus</strong></p>
-        <div class="dofusCalc__row">☯️ <input id="dofusCalc__bNeutre" type="number" value="52"></div>
+        <div class="dofusCalc__row">☯️ <input id="dofusCalc__bNeutre" type="number" value="0"></div>
         <div class="dofusCalc__row">🌳 <input id="dofusCalc__bTerre" type="number" value="0"></div>
         <div class="dofusCalc__row">🔥 <input id="dofusCalc__bFeu" type="number" value="0"></div>
         <div class="dofusCalc__row">💧 <input id="dofusCalc__bEau" type="number" value="0"></div>
