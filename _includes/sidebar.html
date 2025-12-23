@@ -1,0 +1,112 @@
+<!-- Begin sidebar section -->
+<aside class="the-sidebar-container col-xl-3 col-lg-3 col-md-4 col-sm-12 col-xs-12">
+
+  <div class="the-sidebar-square">
+    <h3 class="the-sidebar-title">Réseaux sociaux</h3>
+    <div class="the-sidebar-square-content-socials">
+      <ul style="list-style-type:none;padding:0;margin:0;text-align:center;">
+          <li class="socials-sidebar-item">
+            <a href="https://twitter.com/" target="_blank" rel="noreferrer noopener" style="text-decoration:none;">
+              <div style="width:65px;">
+                <img alt="Twitter icon" src="/img/default/xtwitter.png" height="45px" width="45px">
+                <br><span>X/Twitter</span>
+              </div>
+            </a>
+          </li>
+          <li class="socials-sidebar-item">
+            <a href="https://reddit.com/" target="_blank" rel="noreferrer noopener" style="text-decoration:none;">
+              <div style="width:65px;">
+                <img alt="Reddit icon" src="/img/default/reddit.png" height="45px" width="45px">
+                <br><span>Reddit</span>
+              </div>
+            </a>
+          </li>
+          <li class="socials-sidebar-item">
+            <a href="https://www.youtube.com/" target="_blank" rel="noreferrer noopener" style="text-decoration:none;">
+              <div style="width:65px;">
+                <img alt="YouTube icon" src="/img/default/youtube.png" height="45px" width="45px">
+                <br><span>YouTube</span>
+              </div>
+            </a>
+          </li>
+          <li class="socials-sidebar-item">
+            <a href="https://github.com/KutoSama" target="_blank" rel="noreferrer noopener" style="text-decoration:none;">
+              <div style="width:65px;">
+                <img alt="GitHub icon" src="/img/default/github.png" height="45px" width="45px">
+                <br><span>GitHub</span>
+              </div>
+            </a>
+          </li>
+      </ul>
+    </div>
+  </div> <!-- /the-sidebar-square -->
+
+  <div class="the-sidebar-square">
+    <h3 class="the-sidebar-title">Articles récents</h3>
+    <div class="the-sidebar-square-content">
+        {% for post in site.categories.pinned %}
+          <div class="post-history-item-container">
+            <a class="post-history-item-link" href="{{post.url}}">
+              <div>
+                <img class="post-history-item-image" alt="Preview of post image" src="{{post.image}}" height="100%" width="100%">
+                <span class="cattag-{{post.cattag}}" style="color:white;padding:2px;padding-left:5px;margin-right:5px;font-weight:bold;text-transform:uppercase;">
+                  {{post.cattagText}} 
+                </span>
+                <span style="font-style:italic;color:#333;">{{post.date | date: "%-d %b %Y"}}</span>
+                <br>
+                <span>{{post.title}}</span>
+              </div>
+            </a>
+          </div>
+        {% endfor %}
+    </div>
+  </div> <!-- /the-sidebar-square -->
+
+  <!-- In development -->
+  <style>
+  .the-sidebar-square-content-socials {
+    padding: 5px;
+  }
+  .post-history-item-container {
+    display:block;
+  }
+  .post-history-item-link {
+    text-decoration:none;display:inline-block;width:100%;padding:5px;margin:5px;margin-left:0px;
+  }
+  .post-history-item-link:hover {
+    background-color: #eee;
+  }
+  .post-history-item-image {
+    margin-right:5px;float:left;height:75px;width:100px;object-fit:cover;object-position:center;
+  }
+  @media screen and (max-width: 1400px) {
+    .post-history-item-image {
+      width: 100%;
+      padding-bottom: 5px;
+    }
+  }
+  @media screen and (max-width: 700px) {
+    .post-history-item-image {
+      width: 100px;
+    }
+  }
+  </style>
+
+  <!--<div class="the-sidebar-square">
+    <h3 class="the-sidebar-title">Post history</h3>
+    <div class="the-sidebar-square-content">
+      <ul style="list-style-type:none;padding:0;margin:0;">
+        {% for post in site.categories.sidebar-posts %}
+          <li class="post-history-sidebar-item"><a href="{{post.url}}">{{post.date | date: "%-d %b %Y"}}<br>{{post.title}}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>--> <!-- /the-sidebar-square -->
+
+  <!--<div class="the-sidebar-square">
+    <h3 class="the-sidebar-title">Advertisement</h3>
+    <div class="the-sidebar-square-content">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sit amet consequat quam. Phasellus rutrum nibh nisl, id malesuada nisl blandit nec. Ut id dolor quis nulla semper convallis.</p>
+    </div>
+  </div>--> <!-- /the-sidebar-square -->
+</aside> <!-- /the-sidebar-container -->

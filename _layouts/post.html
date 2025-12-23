@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en" class="h-100">
+<head>
+<!-- Metadescription -->
+<meta name="description" content="{{page.metadescription}}">
+
+{% include head.html %}
+
+<!-- Twitter Card Info -->
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@TechKeepNet" />
+<meta name="twitter:creator" content="@TechKeepNet" />
+<meta property="og:url" content="{{site.url}}{{page.url}}" />
+<meta property="og:title" content="{{page.title}}" />
+<meta property="og:description" content="{{page.metadescription}}" />
+<meta property="og:image" content="{{site.url}}{{page.image}}" />
+</head>
+<body class="d-flex flex-column h-100">
+    
+{% include header.html %}
+
+<!-- Begin page content -->
+<main class="flex-shrink-0">
+
+  <!-- Begin articles section -->
+  <div class="FALP-article-section col-xl-12 col-lg-12 col-md-12 col-sm-12">
+    <div class="FALP-article-container col-xl-9 col-lg-9 col-md-8 col-sm-12">
+
+      <article class="the-full-article-container col-xl-12">
+        <div class="the-full-article">
+          <div class="the-full-article-header col-xl-10" style="margin-left:auto;margin-right:auto;">
+            <h2 class="the-full-article-title">{{page.title}}</h2>
+            <!--<img src='{{ "../img/uploads/Tux-150x150.png" | absolute_url }}' class="the-author-avatar" style="display:block;float:left;"/>
+            <span class="the-full-article-author" style="display:block;">By <a href="https://github.com/TechKeep">TechKeep</a></span>
+            <span class="the-full-article-date" style="display:block;"><span class="fas fa-clock"></span> {{page.date | date: "%-d %b %Y"}}</span>-->
+            <a href="/category/{{page.cattag}}"><div class="the-full-article-tag cattag-{{page.cattag}}">{{page.cattagText}}</div></a>
+            <p>
+              <span class="the-full-article-date">Publié le 
+                <span style="font-style: italic;">
+                  {% assign m = page.date | date: "%-m" %}
+                  {{ page.date | date: "%d" }}
+                  {% case m %}
+                    {% when '1' %}janvier
+                    {% when '2' %}février
+                    {% when '3' %}mars
+                    {% when '4' %}avril
+                    {% when '5' %}mai
+                    {% when '6' %}juin
+                    {% when '7' %}juillet
+                    {% when '8' %}août
+                    {% when '9' %}septembre
+                    {% when '10' %}octobre
+                    {% when '11' %}novembre
+                    {% when '12' %}décembre
+                  {% endcase %}
+                  {{ page.date | date: "%Y" }}
+                  <!-- Exemple : 25 décembre 2023 -->
+                </span>
+              </span>
+              <span class="the-full-article-author">par <a href="{{page.authormainsociallink}}" target="_blank" rel="noreferrer noopener">{{page.author}}</a></span>
+            </p>
+            <h3 class="the-full-article-subtitle" style="font-size: 1.25rem !important;">{{page.subtitle}}</h5>
+            <hr>
+          </div>
+          
+          <div class="the-full-article-content">
+            <div class="col-xl-10" style="margin: 0 auto;">
+              {{ page.content }}
+            </div>
+          </div>
+        </div>
+      </article> <!-- /the-full-article-container -->
+
+      <!-- Placeholder -->
+      <div class="placeholder-under-the-full-article-container col-xl-12">
+        <!-- -<hr> -->
+      </div> <!-- /placeholder-under-the-full-article-container -->
+
+    </div>
+
+    {% include sidebar.html %}
+
+  </div> <!-- /FALP-article-section -->
+</main>
+
+{% include footer.html %}
+
+</body>
+</html>

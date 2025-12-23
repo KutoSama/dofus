@@ -1,0 +1,15 @@
+---
+title: Guides et outils pour Dofus Unity
+subtitle: Tous les guides et outils pour Dofus Unity (Dofus 3).
+layout: page
+permalink: /dofus
+hidden: true
+pagination: 
+  enabled: true
+---
+
+&nbsp;
+
+<ul>
+  <li><a href="/dofus/calculateur-de-degats">Calculateur de dégâts</a></li>
+</ul>

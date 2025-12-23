@@ -1,2 +1,2 @@
-# dofus
-Guides pour Dofus.
+# dofus.kuto.online
+Tout sur Dofus

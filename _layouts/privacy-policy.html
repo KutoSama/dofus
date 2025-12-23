@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en" class="h-100">
+<head>
+<!-- Metadescription -->
+<meta name="description" content="Politique de confidentialité - Tout sur Dofus">
+{% include head0-privacy.html %}
+</head>
+<body class="d-flex flex-column h-100">
+    
+{% include header.html %}
+
+<!-- Begin page content -->
+<main class="flex-shrink-0">
+
+  <!-- Begin articles section -->
+  <div class="FALP-article-section col-xl-12 col-lg-12 col-md-12 col-sm-12">
+    <div class="FALP-article-container col-xl-12 col-lg-12 col-md-12 col-sm-12">
+
+      <article class="the-full-article-container col-xl-12">
+        <div class="the-full-article">
+          <div class="the-full-article-header col-xl-6 col-lg-6" style="margin-left:auto;margin-right:auto;">
+            <h2 class="the-full-article-title">{{page.title}}</h2>
+            <h3 class="the-full-article-subtitle" style="font-size:1.25rem;">{{page.subtitle}}</h3>
+            <hr>
+          </div>
+          
+          <div class="the-full-article-content">
+            <div class="col-xl-6 col-lg-6" style="margin: 0 auto;">
+              {{ page.content }}
+            </div>
+          </div>
+        </div>
+      </article> <!-- /the-full-article-container -->
+
+      <!-- Placeholder -->
+      <div class="placeholder-under-the-full-article-container col-xl-12">
+        <!-- -<hr> -->
+      </div> <!-- /placeholder-under-the-full-article-container -->
+
+    </div>
+
+
+
+  </div> <!-- /FALP-article-section -->
+</main>
+
+{% include footer.html %}
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en" class="h-100">
+<head>
+<!-- Metadescription -->
+<meta name="description" content="Tout sur Dofus">
+{% include head.html %}
+</head>
+<body class="d-flex flex-column h-100">
+    
+{% include header.html %}
+
+<!-- Begin page content -->
+<main class="flex-shrink-0">
+
+  <!-- Begin articles section -->
+  <div class="FALP-article-section col-xl-12 col-lg-12 col-md-12 col-sm-12">
+    <div class="FALP-article-container col-xl-9 col-lg-9 col-md-8 col-sm-12">
+
+      {{ content }}
+
+    </div> <!-- /FALP-article-container -->
+
+    <!-- Begin page selector -->
+    <!--<div class="the-page-selector-container col-xl-9 col-lg-9 col-md-8 col-sm-12 col-xs-12">
+      <h2>
+        {% if paginator.previous_page %}
+          <a href="{{ paginator.previous_page_path }}" class="previous"><i class="fa-solid fa-backward"></i></a>
+        {% else %}
+          <span class="previous"><i class="fa-solid fa-backward"></i></span>
+        {% endif %}
+          <span class="page_number "> Page {{ paginator.page }} of {{ paginator.total_pages }} </span> 
+        {% if paginator.next_page %}
+          <a href="{{ paginator.next_page_path }}" class="next"><i class="fa-solid fa-forward"></i></a>
+        {% else %}
+          <i class="fa-solid fa-forward"></i>
+        {% endif %}
+      </h2>
+    </div>--> <!-- /the-page-selector-container -->
+
+
+    {% include sidebar.html %}
+
+  </div> <!-- /FALP-article-section -->
+</main>
+
+{% include footer.html %}
+
+</body>
+</html>

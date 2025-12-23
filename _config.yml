@@ -1,0 +1,8 @@
+name: dofus.kuto.online
+title: dofus.kuto.online
+plugins: ['jekyll-paginate', 'jekyll-sitemap']
+paginate: 5
+paginate_path: /archive/:num/
+permalink: /article/:title/
+url: https://dofus.kuto.online
+baseurl: ""

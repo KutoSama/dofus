@@ -1,0 +1,61 @@
+---
+title: Archive de toutes les publications (news, articles, etc.)
+subtitle: Liste de tous les articles publiés sur le site, toutes catégories confondues.
+layout: page
+permalink: /news
+hidden: true
+pagination: 
+  enabled: true
+---
+
+<!--{% for post in site.categories.post %}
+  <article class="FALP-article col-xl-12 col-lg-12 col-md-12 col-sm-12">
+    <a href="{{post.url}}" class="clickable-article-link">
+      <img alt="Article preview image" src='{{post.image}}' class="FALP-article-bg-image" width="100%" height="100%"/>
+      <h2 class="FALP-article-title">{{post.title}}</h2>
+      <h3 class="FALP-article-tag cattag-{{post.cattag}}">{{post.cattagText}}</h3>
+      <h3 class="FALP-article-date">{{post.date | date: "%-d %b %Y"}}bbb</h3>
+    </a>
+  </article>
+{% endfor %}-->
+
+{% for post in site.categories.post %}
+  <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+    <div class="post-archive-item-container">
+      <a class="post-archive-item-link" href="{{post.url}}">
+        <div>
+          <img class="post-archive-item-image" alt="Preview of post image" src="{{post.image}}" height="100%" width="100%">
+          <span class="cattag-{{post.cattag}}" style="color:white;padding:2px;padding-left:5px;margin-right:5px;font-weight:bold;text-transform:uppercase;">
+            {{post.cattagText}} 
+          </span>
+          <span style="font-style:italic;color:#333;"> {{post.date | date: "%-d %b, %Y"}}</span>
+          <br>
+          <h3>{{post.title}}</h3>
+          <p style="color:#000;">{{post.metadescription}}</p>
+        </div>
+      </a>
+    </div>
+  </div>
+{% endfor %}
+
+<!-- In development -->
+<style>
+
+</style>
+
+<!-- Begin page selector -->
+<!--<div class="the-page-selector-container col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+  <h2>
+    {% if paginator.previous_page %}
+      <a href="{{ paginator.previous_page_path }}" class="previous"><i class="fa-solid fa-backward"></i></a>
+    {% else %}
+      <span class="previous"><i class="fa-solid fa-backward"></i></span>
+    {% endif %}
+      <span class="page_number "> Page {{ paginator.page }} of {{ paginator.total_pages }} </span> 
+    {% if paginator.next_page %}
+      <a href="{{ paginator.next_page_path }}" class="next"><i class="fa-solid fa-forward"></i></a>
+    {% else %}
+      <i class="fa-solid fa-forward"></i>
+    {% endif %}
+  </h2>
+</div>--> <!-- /the-page-selector-container -->
