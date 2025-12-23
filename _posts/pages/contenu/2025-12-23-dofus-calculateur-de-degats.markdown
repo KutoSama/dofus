@@ -74,7 +74,7 @@ pagination:
 
 .dofusCalc__line select,
 .dofusCalc__line input {
-    width: 50px;
+    width: 60px;
     text-align: center;
 }
 
@@ -94,6 +94,28 @@ pagination:
     justify-content: center;
 }
 
+/* Grille dégâts avec titres */
+.dofusCalc__damageGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px 8px;
+    text-align: center;
+}
+
+/* Titres des blocs */
+.dofusCalc__damageLabel {
+    grid-column: span 2;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+
+
+.dofusCalc__damageGrid input {
+    width: 88px;
+    text-align: center;
+}
+
 /* =======================
    BOUTONS
 ======================= */
@@ -109,6 +131,13 @@ pagination:
 #dofusCalc__addLine {
     display: block;
     margin: 5px auto;
+    background: #e0e0e0;
+    transition: background 0.2s ease, transform 0.1s ease;
+}
+
+#dofusCalc__addLine:hover {
+    background: #d0d0d0;
+    transform: scale(1.03);
 }
 
 #dofusCalc__button {
@@ -129,6 +158,26 @@ pagination:
     background: #33a041;
 }
 
+/* Sélecteur d'élément (emoji) */
+.dofusCalc__line select {
+    font-size: 22px;      /* emoji plus grand */
+    padding: 1px 2px;
+    height: 54px;
+    width: 54px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* Bouton supprimer taille fixe */
+.dofusCalc__remove {
+    width: 54px;
+    height: 54px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    cursor: pointer;
+}
 
 /* =======================
    RÉSULTAT
@@ -138,6 +187,14 @@ pagination:
     font-weight: bold;
     white-space: pre-line;
     text-align: center;
+}
+
+/* Encadré de la grille de dégâts */
+.dofusCalc__damageGrid {
+    background: #f7f7f7;
+    padding: 6px 8px;
+    border-radius: 8px;
+    border: 1px solid #d0d0d0;
 }
 </style>
 
@@ -153,7 +210,7 @@ pagination:
         <div class="dofusCalc__row">🌪️ <input id="dofusCalc__agi" type="number" value="0"></div>
     </div>
     <div class="dofusCalc__col">
-        <p><strong>DMG Bonus</strong></p>
+        <p><strong>Dommages Bonus</strong></p>
         <div class="dofusCalc__row">☯️ <input id="dofusCalc__bNeutre" type="number" value="0"></div>
         <div class="dofusCalc__row">🌳 <input id="dofusCalc__bTerre" type="number" value="0"></div>
         <div class="dofusCalc__row">🔥 <input id="dofusCalc__bFeu" type="number" value="0"></div>
@@ -162,7 +219,7 @@ pagination:
     </div>
 </div>
 
-<p style="text-align:center;padding-top:15px;"><strong>Dégâts [Min] [Max] [CC Min] [CC Max]</strong></p>
+<p style="text-align:center;padding-top:15px;"><strong>Dégâts du sort ou de l'arme</strong></p>
 
 <div id="dofusCalc__lines"></div>
 <button id="dofusCalc__addLine">➕ Ajouter une ligne de dégâts</button>
@@ -211,11 +268,16 @@ const createLine = () => {
             <option value="air">🌪️</option>
         </select>
 
-        <div>
-            <input type="number" class="nMin" placeholder="">
-            <input type="number" class="nMax" placeholder="">
-            <input type="number" class="cMin" placeholder="">
-            <input type="number" class="cMax" placeholder="">
+        <div class="dofusCalc__damageGrid">
+
+            <div class="dofusCalc__damageLabel">Normaux</div>
+            <input type="number" class="nMin" placeholder="Min">
+            <input type="number" class="nMax" placeholder="Max">
+
+            <div class="dofusCalc__damageLabel">Coup critique</div>
+            <input type="number" class="cMin" placeholder="Min">
+            <input type="number" class="cMax" placeholder="Max">
+
         </div>
 
         <span class="dofusCalc__remove">❌</span>
