@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en" class="h-100">
+<head>
+<!-- Metadescription -->
+<meta name="description" content="Tout sur Dofus">
+{% include head.html %}
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    .d3-tuto {
+      /*max-width: 80ch;*/
+      /*margin: 2rem auto;*/
+      line-height: 1.65;
+      /*font-family: sans-serif;*/
+    }
+    .d3-tuto h1 {
+      font-size: 2.2em;
+      font-weight: 700;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+    .d3-tuto-section {
+      margin: 3rem 0;
+      padding-top: 2rem;
+      border-top: 2px solid rgba(0,0,0,0.15);
+    }
+    .d3-tuto-title { font-size: 1.4em; font-weight: 700; margin-bottom: 1rem;}
+    .d3-tuto-step { margin: 1.5rem 0; padding-left: 0;}
+    .d3-tuto-text { margin: 0.75rem 0;}
+    .d3-tuto-images {
+      display: block;
+      /*grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));*/
+      gap: 1rem;
+      margin: 0 auto;
+      max-width: 720px;
+    }
+    .d3-tuto-caption { font-size: 0.85em; opacity: 0.7; margin-top: 0.25rem; text-align: center;}
+    .d3-tuto-note { margin-top: 1.25rem; padding: 0.75rem 1rem; background: rgba(0,200,0,0.15); max-width: 80ch; margin: 2rem auto; border-left: 4px solid #104410; border-radius: 0.25rem;}
+
+    /* Lightbox */
+    .d3-tuto-lightbox-overlay {
+      display: none;
+      position: fixed;
+      top:0; left:0; width:100vw; height:100vh;
+      background: rgba(0,0,0,0.6);
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+
+    .d3-tuto-lightbox-content {
+      position: relative;
+      background: #fff;
+      padding: 2rem;
+      border-radius: 0.5rem;
+      max-width: 90%;
+      max-height: 90%;
+      overflow: auto;
+      box-shadow: 0 0 30px rgba(0,0,0,0.4);
+    }
+
+    .d3-tuto-lightbox-content img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 0.25rem;
+    }
+
+    .d3-tuto-lightbox-close {
+      position: absolute;
+      top: 0.25rem;
+      right: 0.25rem;
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #333;
+      cursor: pointer;
+    }
+
+    .d3-tuto-image {
+      display: block;       /* important : container block pour garder caption sous l'image */
+      text-align: center;   /* optionnel : centrer l'image et la caption */
+      margin-bottom: 1rem;
+    }
+
+    .d3-tuto-image img {
+      max-width: 100%;
+      max-height: 200px;
+      cursor: zoom-in;
+      border-radius: 0.25rem;
+      display: block;       /* pour que la caption soit en dessous */
+      margin: 0 auto;       /* centrer l'image */
+      transition: transform 0.2s ease;
+    }
+
+    .d3-tuto-image img:hover {
+      transform: scale(1.02);
+    }
+
+    .d3-tuto-caption {
+      margin-top: 0.5rem;
+      font-size: 0.85rem;
+      opacity: 0.7;
+    }
+
+  </style>
+</head>
+<body class="d-flex flex-column h-100">
+    
+{% include header.html %}
+
+<!-- Begin page content -->
+<main class="flex-shrink-0">
+
+  <!-- Begin articles section -->
+  <div class="FALP-article-section col-xl-12 col-lg-12 col-md-12 col-sm-12">
+    <div class="FALP-article-container col-xl-9 col-lg-9 col-md-8 col-sm-12">
+
+      <article class="the-full-article-container col-xl-12">
+        <div class="the-full-article">
+
+          
+          <div class="the-full-article-content">
+            <div class="col-xl-10" style="margin: 0 auto;">
+              <main class="d3-tuto">
+                <h1>{{ page.title }}</h1>
+
+                {% if page.steps %}
+                  <!-- Table des matières -->
+                  <nav class="d3-tuto-toc">
+                    <h6>Table des matières</h6>
+                    <ul>
+                      {% for step in page.steps %}
+                        {% assign step_id = "etape-" | append: forloop.index0 %}
+                        <li><a href="#{{ step_id }}">{{ step.title }}</a></li>
+                      {% endfor %}
+                    </ul>
+                  </nav>
+
+                  <!-- Boucle des étapes -->
+                  {% for step in page.steps %}
+                    {% assign step_id = "etape-" | append: forloop.index0 %}
+                    <div class="d3-tuto-section" id="{{ step_id }}">
+                      <div class="d3-tuto-title">{{ step.title }}</div>
+                      <div class="d3-tuto-step">
+                        <p class="d3-tuto-text">{{ step.text | markdownify }}</p>
+
+                        {% if step.images %}
+                        <div class="d3-tuto-images">
+                          {% for img in step.images %}
+                            <div class="d3-tuto-image">
+                              <img src="{{ img.src }}" alt="{{ img.caption }}">
+                              {% if img.caption %}
+                                <div class="d3-tuto-caption">{{ img.caption }}</div>
+                              {% else %}
+                                <div class="d3-tuto-caption">Cliquer pour agrandir</div>
+                              {% endif %}
+                            </div>
+                          {% endfor %}
+                        </div>
+                        {% endif %}
+
+                        {% if step.note %}
+                          <div class="d3-tuto-note">{{ step.note | markdownify }}</div>
+                        {% endif %}
+
+                      </div>
+                    </div>
+                  {% endfor %}
+                {% endif %}
+
+                {{ content }} <!-- contenu additionnel libre si besoin -->
+              </main>
+
+            </div>
+          </div>
+        </div>
+      </article> <!-- /the-full-article-container -->
+
+      <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        // Utilisation de event delegation pour s'assurer que ça fonctionne sur toutes les images
+        document.querySelectorAll('.d3-tuto-image img').forEach(img => {
+          img.addEventListener('click', function() {
+            const src = img.src;
+
+            // créer overlay
+            const overlay = document.createElement('div');
+            overlay.className = 'd3-tuto-lightbox-overlay';
+            overlay.style.display = 'flex';
+
+            // contenu
+            const content = document.createElement('div');
+            content.className = 'd3-tuto-lightbox-content';
+
+            const imgLarge = document.createElement('img');
+            imgLarge.src = src;
+            content.appendChild(imgLarge);
+
+            // bouton fermer
+            const closeBtn = document.createElement('span');
+            closeBtn.className = 'd3-tuto-lightbox-close';
+            closeBtn.innerHTML = '✕';
+            content.appendChild(closeBtn);
+
+            overlay.appendChild(content);
+            document.body.appendChild(overlay);
+
+            // fermer au clic sur X
+            closeBtn.addEventListener('click', () => overlay.remove());
+            // fermer au clic sur le fond
+            overlay.addEventListener('click', e => {
+              if(e.target === overlay) overlay.remove();
+            });
+          });
+        });
+      });
+      </script>
+
+
+
+      <!-- Placeholder -->
+      <div class="placeholder-under-the-full-article-container col-xl-12">
+        <!-- -<hr> -->
+      </div> <!-- /placeholder-under-the-full-article-container -->
+
+    </div>
+
+    {% include sidebar.html %}
+
+  </div> <!-- /FALP-article-section -->
+</main>
+
+{% include footer.html %}
+
+</body>
+</html>

@@ -11,5 +11,10 @@ pagination:
 &nbsp;
 
 <ul>
+  <li>
+    <a href="/dofus/quetes">
+      <img src="/img/assets/dofus/quetes/quests_button.png" alt="Quêtes" width="250">
+    </a>
+  </li>
   <li><a href="/dofus/calculateur-de-degats">Calculateur de dégâts</a></li>
 </ul>
