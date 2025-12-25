@@ -1,5 +1,5 @@
 ---
-title: "Quête: Bien débuter"
+title: "Quête: *Bien débuter*"
 subtitle: Quête faisant parti du succès "En route pour l'aventure" sur Dofus Unity (Dofus 3).
 layout: tutorial
 permalink: /dofus/quetes/incarnam/bien-debuter
