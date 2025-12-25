@@ -60,7 +60,7 @@ steps:
   - title: Répartition des points de caractéristiques
     text: "Pour pouvoir continuer, vous devez absolument répartir vos points de caractéristiques dans l'élément de votre choix. Si vous ne savez pas quel élément choisir, c'est le moment de faire une petite recherche (ou de prendre un moment pour examiner vos sorts de classe).
       <br>Prochainement, nous mettrons en ligne un guide pour aider à mieux choisir son élément."
-    note: "⚠️ **ATTENTION**: Si vous essayez de répartir vos caractéristiques en appuyant sur l'élément directement comme dans la 4ème image ci-dessous, ça ne confirmera pas l'étape. Vous devez absolument utiliser le bouton comme dans la 3ème image."
+    note: "⚠️ **ATTENTION**: Si vous essayez de répartir vos caractéristiques en appuyant sur l'élément directement comme dans la 4ème image ci-dessus, ça ne confirmera pas l'étape. Vous devez absolument utiliser le bouton comme dans la 3ème image."
     images:
       - src: \img\assets\dofus\quetes\incarnam\01-bien-debuter\11.png
         caption: "Bouton de l'interface des caractéristiques"
