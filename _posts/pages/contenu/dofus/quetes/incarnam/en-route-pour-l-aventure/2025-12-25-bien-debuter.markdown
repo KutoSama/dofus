@@ -1,7 +1,7 @@
 ---
 title: "Quête: *Bien débuter*"
-subtitle: Quête d'Incarnam faisant parti du succès "En route pour l'aventure" sur Dofus Unity (Dofus 3).
-metadescription: Quête d'Incarnam faisant parti du succès "En route pour l'aventure" sur Dofus Unity (Dofus 3).
+subtitle: "Quête d'Incarnam faisant parti du succès \"En route pour l'aventure\" sur Dofus Unity (Dofus 3)."
+metadescription: "Quête d'Incarnam faisant parti du succès \"En route pour l'aventure\" sur Dofus Unity (Dofus 3)."
 image: /img/default/site_logo.png
 layout: tutorial
 permalink: /dofus/quetes/incarnam/bien-debuter

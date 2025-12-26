@@ -1,7 +1,7 @@
 ---
 title: "Quête: *L'anneau de tous les dangers*"
-subtitle: Quête d'Incarnam faisant parti du succès "En route pour l'aventure" sur Dofus Unity (Dofus 3).
-metadescription: Quête d'Incarnam faisant parti du succès "En route pour l'aventure" sur Dofus Unity (Dofus 3).
+subtitle: "Quête d'Incarnam faisant parti du succès \"En route pour l'aventure\" sur Dofus Unity (Dofus 3)."
+metadescription: "Quête d'Incarnam faisant parti du succès \"En route pour l'aventure\" sur Dofus Unity (Dofus 3)."
 image: /img/default/site_logo.png
 layout: tutorial
 permalink: /dofus/quetes/incarnam/l-anneau-de-tous-les-dangers
