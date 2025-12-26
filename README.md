@@ -1,2 +1,2 @@
-# dofus.kuto.online
+# sectiondofus.com
 Tout sur Dofus

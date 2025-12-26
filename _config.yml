@@ -1,8 +1,8 @@
-name: dofus.kuto.online
-title: dofus.kuto.online
+name: sectiondofus.com
+title: SectionDofus.com
 plugins: ['jekyll-paginate', 'jekyll-sitemap']
 paginate: 5
 paginate_path: /archive/:num/
 permalink: /article/:title/
-url: https://dofus.kuto.online
+url: https://sectiondofus.com
 baseurl: ""

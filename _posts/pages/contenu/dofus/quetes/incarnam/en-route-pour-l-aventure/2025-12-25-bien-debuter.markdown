@@ -41,7 +41,7 @@ steps:
 
   - title: Deuxième combat
     text: "Après avoir changé de map, affrontez le groupe de monstres pour réaliser la quête Vaincre les monstres."
-    text: "Vous devez maintenant changer de map vers la *droite*. Une fois sur place, vous devez affronter le groupe de monstres, qui consiste en un *Bouftou Céleste* et un *Tiboufton Céleste*.
+    text: "Vous devez maintenant changer de map vers la **droite**. Une fois sur place, vous devez affronter le groupe de monstres, qui consiste en un ***Bouftou Céleste*** et un ***Tiboufton Céleste***.
       <br>Une fois le combat terminé, parlez à nouveau à Ganymède pour valider l'étape."
     images:
       - src: \img\assets\dofus\quetes\incarnam\01-bien-debuter\7.png

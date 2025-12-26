@@ -2,8 +2,8 @@
 title: La section Dofus est maintenant en ligne!
 subtitle: Le site pourrait être mis à jour plusieurs fois et être instable pendant le développement.
 metadescription: Tout sur Dofus
-author: KutoSama
-authormainsociallink: https://github.com/KutoSama/
+author: SectionDofus
+authormainsociallink: https://twitter.com/SectionDofus/
 layout: post
 category: post
 date: 2025-12-23 13:30:40
