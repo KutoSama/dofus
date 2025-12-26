@@ -2,13 +2,13 @@
 <html lang="en" class="h-100">
 <head>
 <!-- Metadescription -->
-<meta name="description" content="{{page.metadescription}}">
+<meta name="description" content="{{page.subtitle}}<br>{{page.metadescription}}">
 
 {% include head.html %}
 
 <meta property="og:url" content="{{site.url}}{{page.url}}" />
 <meta property="og:title" content="{{page.title}}" />
-<meta property="og:description" content="{{page.metadescription}}" />
+<meta property="og:description" content="{{page.subtitle}}<br>{{page.metadescription}}" />
 <meta property="og:image" content="{{site.url}}{{page.image}}" />
 
 <!-- Twitter Card Info -->
