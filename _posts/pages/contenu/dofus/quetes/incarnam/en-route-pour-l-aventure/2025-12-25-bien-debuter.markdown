@@ -16,7 +16,7 @@ steps:
       <br><br>💡 Si vous avez quitté le tutoriel auparavant, vous pouvez à tout moment retourner à Incarnam et appuyer sur le bouton \"Rejoindre le tutoriel\" pour y retourner."
 
   - title: Rencontre avec Ganymède
-    text: "Parlez à Ganymède qui vous souhaite la bienvenue et vous guide pour apprendre les bases."
+    text: "Parlez à Ganymède. Il va vous souhaiter la bienvenue et vous guider pour apprendre les bases."
     images:
       - src: \img\assets\dofus\quetes\incarnam\01-bien-debuter\1.png
         caption: "Dialogue avec Ganymède"
