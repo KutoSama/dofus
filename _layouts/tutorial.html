@@ -2,109 +2,120 @@
 <html lang="en" class="h-100">
 <head>
 <!-- Metadescription -->
-<meta name="description" content="Tout sur Dofus">
+<meta name="description" content="{{page.metadescription}}">
+
 {% include head.html %}
-  <style>
-    html {
-      scroll-behavior: smooth;
-    }
 
-    .d3-tuto {
-      /*max-width: 80ch;*/
-      /*margin: 2rem auto;*/
-      line-height: 1.65;
-      /*font-family: sans-serif;*/
-    }
-    .d3-tuto h1 {
-      font-size: 2.2em;
-      font-weight: 700;
-      margin-bottom: 2rem;
-      text-align: center;
-    }
-    .d3-tuto-section {
-      margin: 3rem 0;
-      padding-top: 2rem;
-      border-top: 2px solid rgba(0,0,0,0.15);
-    }
-    .d3-tuto-title { font-size: 1.4em; font-weight: 700; margin-bottom: 1rem;}
-    .d3-tuto-step { margin: 1.5rem 0; padding-left: 0;}
-    .d3-tuto-text { margin: 0.75rem 0;}
-    .d3-tuto-images {
-      display: block;
-      /*grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));*/
-      gap: 1rem;
-      margin: 0 auto;
-      max-width: 720px;
-    }
-    .d3-tuto-caption { font-size: 0.85em; opacity: 0.7; margin-top: 0.25rem; text-align: center;}
-    .d3-tuto-note { margin-top: 1.25rem; padding: 0.75rem 1rem; background: rgba(0,200,0,0.15); max-width: 80ch; margin: 2rem auto; border-left: 4px solid #104410; border-radius: 0.25rem;}
+<meta property="og:url" content="{{site.url}}{{page.url}}" />
+<meta property="og:title" content="{{page.title}}" />
+<meta property="og:description" content="{{page.metadescription}}" />
+<meta property="og:image" content="{{site.url}}{{page.image}}" />
 
-    /* Lightbox */
-    .d3-tuto-lightbox-overlay {
-      display: none;
-      position: fixed;
-      top:0; left:0; width:100vw; height:100vh;
-      background: rgba(0,0,0,0.6);
-      justify-content: center;
-      align-items: center;
-      z-index: 9999;
-    }
+<!-- Twitter Card Info -->
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@SectionDofus" />
+<meta name="twitter:creator" content="@SectionDofus" />
+<style>
+  html {
+    scroll-behavior: smooth;
+  }
 
-    .d3-tuto-lightbox-content {
-      position: relative;
-      background: #fff;
-      padding: 2rem;
-      border-radius: 0.5rem;
-      max-width: 90%;
-      max-height: 90%;
-      overflow: auto;
-      box-shadow: 0 0 30px rgba(0,0,0,0.4);
-    }
+  .d3-tuto {
+    /*max-width: 80ch;*/
+    /*margin: 2rem auto;*/
+    line-height: 1.65;
+    /*font-family: sans-serif;*/
+  }
+  .d3-tuto h1 {
+    font-size: 2.2em;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  .d3-tuto-section {
+    margin: 3rem 0;
+    padding-top: 2rem;
+    border-top: 2px solid rgba(0,0,0,0.15);
+  }
+  .d3-tuto-title { font-size: 1.4em; font-weight: 700; margin-bottom: 1rem;}
+  .d3-tuto-step { margin: 1.5rem 0; padding-left: 0;}
+  .d3-tuto-text { margin: 0.75rem 0;}
+  .d3-tuto-images {
+    display: block;
+    /*grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));*/
+    gap: 1rem;
+    margin: 0 auto;
+    max-width: 720px;
+  }
+  .d3-tuto-caption { font-size: 0.85em; opacity: 0.7; margin-top: 0.25rem; text-align: center;}
+  .d3-tuto-note { margin-top: 1.25rem; padding: 0.75rem 1rem; background: rgba(0,200,0,0.15); max-width: 80ch; margin: 2rem auto; border-left: 4px solid #104410; border-radius: 0.25rem;}
 
-    .d3-tuto-lightbox-content img {
-      width: 100%;
-      height: auto;
-      display: block;
-      border-radius: 0.25rem;
-    }
+  /* Lightbox */
+  .d3-tuto-lightbox-overlay {
+    display: none;
+    position: fixed;
+    top:0; left:0; width:100vw; height:100vh;
+    background: rgba(0,0,0,0.6);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
 
-    .d3-tuto-lightbox-close {
-      position: absolute;
-      top: 0.25rem;
-      right: 0.25rem;
-      font-size: 1.5rem;
-      font-weight: bold;
-      color: #333;
-      cursor: pointer;
-    }
+  .d3-tuto-lightbox-content {
+    position: relative;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    max-width: 90%;
+    max-height: 90%;
+    overflow: auto;
+    box-shadow: 0 0 30px rgba(0,0,0,0.4);
+  }
 
-    .d3-tuto-image {
-      display: block;       /* important : container block pour garder caption sous l'image */
-      text-align: center;   /* optionnel : centrer l'image et la caption */
-      margin-bottom: 1rem;
-    }
+  .d3-tuto-lightbox-content img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 0.25rem;
+  }
 
-    .d3-tuto-image img {
-      max-width: 100%;
-      max-height: 200px;
-      cursor: zoom-in;
-      border-radius: 0.25rem;
-      display: block;       /* pour que la caption soit en dessous */
-      margin: 0 auto;       /* centrer l'image */
-      transition: transform 0.2s ease;
-    }
+  .d3-tuto-lightbox-close {
+    position: absolute;
+    top: 0.25rem;
+    right: 0.25rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+  }
 
-    .d3-tuto-image img:hover {
-      transform: scale(1.02);
-    }
+  .d3-tuto-image {
+    display: block;       /* important : container block pour garder caption sous l'image */
+    text-align: center;   /* optionnel : centrer l'image et la caption */
+    margin-bottom: 1rem;
+  }
 
-    .d3-tuto-caption {
-      margin-top: 0.5rem;
-      font-size: 0.85rem;
-      opacity: 0.7;
-    }
+  .d3-tuto-image img {
+    max-width: 100%;
+    max-height: 200px;
+    cursor: zoom-in;
+    border-radius: 0.25rem;
+    display: block;       /* pour que la caption soit en dessous */
+    margin: 0 auto;       /* centrer l'image */
+    transition: transform 0.2s ease;
+  }
 
-  </style>
+  .d3-tuto-image img:hover {
+    transform: scale(1.02);
+  }
+
+  .d3-tuto-caption {
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    opacity: 0.7;
+  }
+
+</style>
 </head>
 <body class="d-flex flex-column h-100">
     

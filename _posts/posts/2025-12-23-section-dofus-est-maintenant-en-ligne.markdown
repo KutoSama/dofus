@@ -1,7 +1,7 @@
 ---
-title: La section Dofus est maintenant en ligne!
+title: Section Dofus est maintenant en ligne!
 subtitle: Le site pourrait être mis à jour plusieurs fois et être instable pendant le développement.
-metadescription: Tout sur Dofus
+metadescription: "Plusieurs formats sont déjà en préparation : guides pratiques, tutoriels techniques, analyses de systèmes de jeu, ainsi que différents projets liés à l’univers de Dofus. Le contenu évoluera progressivement, au fil des idées et des expérimentations."
 author: SectionDofus
 authormainsociallink: https://twitter.com/SectionDofus/
 layout: post
