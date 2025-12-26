@@ -2,13 +2,13 @@
 <html lang="en" class="h-100">
 <head>
 <!-- Metadescription -->
-<meta name="description" content="{{page.subtitle}}<br>{{page.metadescription}}">
+<meta name="description" content="{{page.subtitle}} • {{page.metadescription}}">
 
 {% include head.html %}
 
 <meta property="og:url" content="{{site.url}}{{page.url}}" />
 <meta property="og:title" content="{{page.title}}" />
-<meta property="og:description" content="{{page.subtitle}}<br>{{page.metadescription}}" />
+<meta property="og:description" content="{{page.subtitle}} • {{page.metadescription}}" />
 <meta property="og:image" content="{{site.url}}{{page.image}}" />
 
 <!-- Twitter Card Info -->
@@ -136,6 +136,7 @@
             <div class="col-xl-10" style="margin: 0 auto;">
               <main class="d3-tuto">
                 <h1>{{ page.title | markdownify }}</h1>
+                <h2>{{ page.subtitle | markdownify }}</h2>
 
                 {% if page.steps %}
                   <!-- Table des matières -->

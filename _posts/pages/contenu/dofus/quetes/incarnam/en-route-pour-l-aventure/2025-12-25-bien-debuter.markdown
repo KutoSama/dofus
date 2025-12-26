@@ -1,6 +1,6 @@
 ---
 title: "Quête: *Bien débuter*"
-subtitle: "Quête d'Incarnam faisant parti du succès *[En route pour l'aventure]* sur Dofus Unity (Dofus 3)."
+subtitle: "Quête d'Incarnam faisant parti du succès *[En route pour l'aventure]* sur Dofus."
 metadescription: "Cette quête sert de tutoriel pour le jeu. À la création d'un personnage, elle se lance automatiquement."
 image: /img/default/site_logo.png
 layout: tutorial
