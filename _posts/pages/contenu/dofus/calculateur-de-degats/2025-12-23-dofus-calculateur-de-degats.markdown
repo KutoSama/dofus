@@ -1,11 +1,11 @@
 ---
 title: Calculateur de dégâts
-subtitle: Adapté pour Dofus Unity (Dofus 3).
+subtitle: Adapté pour Dofus 3.
+metadescription: "Permet de calculer les dommages de façon précise afin d'aider à choisir quel élément jouer, quels sorts choisir, quelle arme utiliser, etc."
+image: /img/default/site_logo.png
 layout: page
 permalink: /dofus/calculateur-de-degats
 hidden: true
-pagination: 
-  enabled: true
 ---
 
 <style>
